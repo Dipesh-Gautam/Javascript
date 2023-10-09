@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showing result on screen</title>
+</head>
+<style>
+    body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    #inputs,
+    h1 {
+        margin-bottom: 10px;
+        color: blue;
+    }
+</style>
+
+<body>
+    <h1 id="heading"></h1>
+    <input id="inputs" type="text" />
+    <button id="btn">+</button>
+
+    <script>
+        let totalAmount = 0;
+
+        let headElement = document.querySelector("#heading");
+        headElement.textContent = totalAmount;
+
+        function increment() {
+            let inputElement = document.querySelector("#inputs");
+            const inputElement1 = inputElement.value;
+            const inputElement2 = parseInt(inputElement1, 10);
+            totalAmount = totalAmount + inputElement2;
+
+            let headingElement1 = document.querySelector("#heading");
+            headingElement1.textContent = totalAmount;
+            // console.log(totalAmount)
+        }
+        const element = document.querySelector("#btn");
+        element.addEventListener("click", increment);
+    </script>
+</body>
+
+</html>
