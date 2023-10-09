@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        body {
+            display: flex;
+            font-size: 25px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        #btn {
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Add</button>
+    <script>
+        var counter = 0;
+        console.log(counter);
+        function increment() {
+            counter++;
+            console.log(counter);
+        }
+        let element = document.querySelector("#btn");
+        addEventListener("click",increment)
+        
+    </script>
+</body>
+</html>
