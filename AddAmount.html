@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read from input</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <input id="inputAmount" type="text" />
+    <button class="addAmount">+</button>
+    <script>
+        let totalAmount = 0;
+        console.log(totalAmount);
+
+        function addTotalAmount() {
+            const inputElement = document.querySelector("#inputAmount");
+            const textAmount = inputElement.value;
+            // console.log(textAmount)
+
+            const amount = parseInt(textAmount, 10);
+            // console.log(amount);
+
+            totalAmount = totalAmount + amount;
+            console.log({ totalAmount })
+        }
+
+        const element = document.querySelector(".addAmount");
+        element.addEventListener("click", addTotalAmount);
+
+    </script>
+</body>
+
+</html>
