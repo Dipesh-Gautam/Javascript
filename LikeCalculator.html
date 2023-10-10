@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like Calculator</title>
+</head>
+
+<body>
+    <h1 id="heading"></h1>
+    <input id="inputValue" type="number" />
+    <button id="add">+</button>
+    <button id="sub">-</button>
+    <button id="mul">*</button>
+    <button id="div">/</button>
+
+    <script>
+        let total = 0;
+        const headingElement = document.querySelector("#heading");
+        headingElement.textContent = total;
+
+        const inputs = document.querySelector("#inputValue");
+
+
+        function totalAdd() {
+            const addInputs1 = inputs.value;
+            const addInputs2 = parseInt(addInputs1, 10);
+
+            total = total + addInputs2;
+            headingElement.textContent = total;
+        }
+
+        const addElement = document.querySelector("#add");
+        addElement.addEventListener("click", totalAdd)
+
+        function totalSub() {
+            const subInputs1 = inputs.value;
+            const subInputs2 = parseInt(subInputs1, 10);
+
+            total = total - subInputs2;
+            headingElement.textContent = total;
+
+        }
+
+        const subElement = document.querySelector("#sub");
+        subElement.addEventListener("click", totalSub)
+
+        function totalMul() {
+
+            const mulInputs1 = inputs.value;
+            const mulInputs2 = parseInt(mulInputs1, 10);
+
+            total = total * mulInputs2;
+            headingElement.textContent = total;
+        }
+
+        const mulElement = document.querySelector("#mul");
+        mulElement.addEventListener("click", totalMul);
+
+        function totalDiv ()  {
+            const divInputs1 = inputs.value;
+            const divInputs2 = parseInt(divInputs1,10);
+
+            total = total / divInputs2 ;
+            headingElement.textContent = total;
+        }
+
+        const divElement = document.querySelector("#div");
+        divElement.addEventListener("click", totalDiv)
+
+
+    </script>
+
+
+</body>
+
+</html>
