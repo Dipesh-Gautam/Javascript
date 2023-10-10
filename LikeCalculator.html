@@ -6,14 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Like Calculator</title>
 </head>
+<style>
+    body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        background-color: silver;
+
+    }
+
+    input {
+        margin-bottom: 15px;
+        background-color: rgb(223, 220, 172);
+        font-size: x-large;
+        color: brown;
+    }
+
+    #add,
+    #sub,
+    #mul,
+    #div {
+        font-size: large;
+        width: 50px;
+    }
+</style>
 
 <body>
-    <h1 id="heading"></h1>
+    <h1 id="heading" style="color: brown;"></h1>
+
     <input id="inputValue" type="number" />
-    <button id="add">+</button>
-    <button id="sub">-</button>
-    <button id="mul">*</button>
-    <button id="div">/</button>
+    <p>
+
+        <button id="add" style="background-color:rgb(186, 172, 200)">+</button>
+        <button id="sub" style="background-color: rgb(119, 171, 168);">-</button>
+        <button id="mul" style="background-color: bisque;">*</button>
+        <button id="div" style="background-color: rgb(205, 168, 191);">/</button>
+    </p>
 
     <script>
         let total = 0;
@@ -58,11 +88,11 @@
         const mulElement = document.querySelector("#mul");
         mulElement.addEventListener("click", totalMul);
 
-        function totalDiv ()  {
+        function totalDiv() {
             const divInputs1 = inputs.value;
-            const divInputs2 = parseInt(divInputs1,10);
+            const divInputs2 = parseInt(divInputs1, 10);
 
-            total = total / divInputs2 ;
+            total = total / divInputs2;
             headingElement.textContent = total;
         }
 
