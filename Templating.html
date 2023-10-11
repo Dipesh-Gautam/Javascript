@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templating</title>
+</head>
+
+<body>
+    <h1 id="headId"></h1>
+    <input id="inputId">
+    <button id="buttonId">Add</button>
+    <div id="divId"></div>
+</body>
+<script>
+    let total = 0;
+    const priceArray = [];
+
+    const headEl = document.querySelector("#headId");
+    const inputEl = document.querySelector("#inputId");
+    const buttonEl = document.querySelector("#buttonId");
+    const divEl = document.querySelector("#divId");
+
+    headEl.textContent = total;
+
+    function result() {
+        let obj = {};
+
+        const inputEl1 = inputEl.value;
+        const inputEl2 = parseInt(inputEl1, 10);
+
+        total = total + inputEl2;
+
+        obj.price = inputEl2;
+
+        priceArray.push(obj);
+
+        const someText = `Total : ${total}`;
+
+        headEl.textContent = someText;
+
+        const data1 = priceArray[0];
+        const data2 = priceArray[1];
+        const data3 = priceArray[2];
+        const data4 = priceArray[3];
+
+        divEl.innerHTML = ` <div> Value : ${data1.price}</div>
+                            <div> Value : ${data2.price}</div>
+                            <div>Value : ${data3.price}</div>
+                            <div>Value : ${data4.price}</div>
+        `
+
+
+    }
+
+    buttonEl.addEventListener("click", result)
+</script>
+
+</html>
