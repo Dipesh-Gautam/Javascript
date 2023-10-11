@@ -21,9 +21,9 @@
         headingElement.textContent = total;
 
         const priceElement = document.querySelector("#price");
-        
+
         const tableElement = document.querySelector("#table");
- 
+
 
         function totalPrice() {
             let obj = {};
@@ -46,8 +46,15 @@
             const data1 = expense[0];
             const data2 = expense[1];
 
-            const data1Text = `Price : ${data1.price}}`;
+            const data1Text = `Price : ${data1.price} `;
             const data2Text = `Price : ${data2.price}`;
+
+            const dataText = `
+            <div>${data1Text}</div>
+            <div>${data2Text}</div>
+            `
+
+            tableElement.innerHTML = dataText;
         }
 
         const btnElement = document.querySelector("#btn")
