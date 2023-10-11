@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templating</title>
+</head>
+
+<body>
+    <h1 id="heading"></h1>
+    <input id="price" type="text">
+    <button id="btn">Add</button>
+    <div id="table"></div>
+
+    <script>
+        let total = 0;
+        const expense = [];
+
+        const headingElement = document.querySelector("#heading");
+        headingElement.textContent = total;
+
+        const priceElement = document.querySelector("#price");
+        
+        const tableElement = document.querySelector("#table");
+ 
+
+        function totalPrice() {
+            let obj = {};
+
+            const priceElement1 = priceElement.value;
+            const priceElement2 = parseInt(priceElement1, 10);
+
+            total = total + priceElement2;
+
+            const someText = `Total : ${total}`
+            headingElement.textContent = someText;
+
+            obj.price = priceElement2;
+            console.log(obj);
+
+            expense.push(obj);
+            console.log(expense);
+
+
+            const data1 = expense[0];
+            const data2 = expense[1];
+
+            const data1Text = `Price : ${data1.price}}`;
+            const data2Text = `Price : ${data2.price}`;
+        }
+
+        const btnElement = document.querySelector("#btn")
+        btnElement.addEventListener("click", totalPrice);
+
+    </script>
+</body>
+
+</html>
