@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping</title>
+</head>
+
+<body>
+    <h1 id="headingId"></h1>
+    <input id="inputId1" placeholder="item">
+    <input id="inputId2" placeholder="price">
+    <button id="buttonId">Add</button>
+    <div id="divId"></div>
+</body>
+<script>
+    let total = 0;
+    const totalArray = [];
+
+    const headEl = document.querySelector("#headingId");
+    const inputEl1 = document.querySelector("#inputId1");
+    const inputEl2 = document.querySelector("#inputId2");
+    const buttonEl = document.querySelector("#buttonId");
+    const divEl = document.querySelector("#divId");
+
+    headEl.textContent = `${total}`;
+
+    function totalExpense() {
+        let obj = {};
+
+        const inputElValue1 = inputEl1.value;
+        console.log(inputElValue1);
+
+        const inputElValue3 = inputEl2.value;
+        const inputElValue4 = parseInt(inputElValue3, 10);
+        console.log(inputElValue4);
+
+        total = total + inputElValue4;
+        headEl.textContent = `Total:${total}`;
+
+        obj.item = inputElValue1;
+        obj.price = inputElValue4;
+
+        console.log(obj);
+
+        totalArray.push(obj);
+        console.log(totalArray);
+
+        const totalExpenseHtml1 = totalArray.map((data) => {
+            return `<div>Item:${data.item}, Price:${data.price}</div>`
+        })
+        const totalExpenseHtml2 = totalExpenseHtml1.join("");
+
+        divEl.innerHTML = totalExpenseHtml2;
+
+    }
+
+    buttonEl.addEventListener("click", totalExpense);
+</script>
+
+</html>
